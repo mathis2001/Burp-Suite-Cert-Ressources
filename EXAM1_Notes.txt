@@ -51,7 +51,7 @@ SQLi => possible +
 XXE => possible -
 SSRF => possible
 OS injection => possible
-Deserial => non
+Deserial => possible +
 File upload => non
 
 View-source => clean

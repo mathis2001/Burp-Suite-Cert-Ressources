@@ -75,3 +75,5 @@ Received request data => solution-NMN8OGrvOL0ehJ5wqoNWIGTWPwaTZZ8Z
 
 /!\ Configure the path to the ysoserial.jar file in the extension config and use another version of ysoserial if that doesn't work.
 /!\ HTTP/2 required
+
+Practical Exam Completed !

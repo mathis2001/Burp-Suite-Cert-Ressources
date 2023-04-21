@@ -28,3 +28,10 @@ Almost Everything can be done only with Burp Suite but you can help with one of 
 - Ghauri
 - ysoserial
 - Hashcat (maybe)
+
+## Useful browser extension
+
+- DOM Invader
+- Cookie editor
+- FoxyProxy
+- MessPostage

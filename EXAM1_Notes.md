@@ -100,6 +100,9 @@ Insecure deserialization of admin-prefs cookie
 
 H4sIAAAAAAAA%2fzWPPU7DQBCFF0RSQcMJpkOi2PTQEH4iCkcKClJEOV6Pk8HrHbO7dmKQOA4VJ%2bAI3IU7sBahm%2fn09PS9zx81Cl6dW8w1msjigjZS1%2bJ0IM9o%2bRVzS3pa1OwWnsrw9vUxDqvv7FAdZeq4xE48R5qJFFGdZs%2fY4cSiW0%2bW0bNbX2bq5D%2fz0EqkF%2fWuDvawHei1SLWHo7ih%2bi%2bxa6Iab5kc%2baiu5j04rAk4wA16KwHm4qL0qOFJWqjYWiqg7qHEVOE1JNMGPUEUKJh0VIvHDcGKcpg2jWWDw1K4R1ORPwvpcEWePC7gloORjgZ1SBDudo0VjsO7JDMI9zCzuA1JT3zaSb9PDWuHQgEAAA%3d%3d
 
+![image](https://user-images.githubusercontent.com/40497633/233638562-a97e2955-c3f2-4d89-8475-1e01f8a00767.png)
+
+
 extension Java deserialisation scanner => exploitation 
 
 ![image](https://user-images.githubusercontent.com/40497633/233633030-60e1c7bd-e027-457a-8f42-b6dabbf77025.png)

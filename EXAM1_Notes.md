@@ -4,16 +4,13 @@ Active Scan => DOM-XSS => "-alert(1)-"
 
 ![image](https://user-images.githubusercontent.com/40497633/233626048-0866c789-cc7c-4278-ae84-721bbfa8ef41.png)
 
-
+![image](https://user-images.githubusercontent.com/40497633/233626299-da46ddec-1288-49fe-a557-3380039229c0.png)
 dots are blocked => first bypass to get cookie => alert(document['cookie'])
 
 
-![image](https://user-images.githubusercontent.com/40497633/233626299-da46ddec-1288-49fe-a557-3380039229c0.png)
-
-Cannot exfiltrate data as dots are needed for the burp collab domain so we have to use atob to use it as base64.
-
 ![image](https://user-images.githubusercontent.com/40497633/233626763-d3d2cd7d-1359-4f72-8ba5-f295416ce4c0.png)
 
+Cannot exfiltrate data as dots are needed for the burp collab domain so we have to use atob to use it as base64.
 
 Exploit:
 "-eval(atob('[base64 encoded payload]'))-"

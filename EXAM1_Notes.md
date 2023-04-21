@@ -87,12 +87,12 @@ New feature => admin panel => delete users => list of blogs with title/author/vi
 
 checklist:
 
-SQLi => possible - (no interactions on admin panel so only possibility in headers)
-XXE => not possible cause no interactions on admin panel
-SSRF => possible only in headers
-OS injection => possible only on headers
-Deserial => possible + (Cookie look java serialized)
-File upload => not possible (no file upload feature)
+- SQLi => possible - (no interactions on admin panel so only possibility in headers)
+- XXE => not possible cause no interactions on admin panel
+- SSRF => possible only in headers
+- OS injection => possible only on headers
+- Deserial => possible + (Cookie look java serialized)
+- File upload => not possible (no file upload feature)
 
 View-source => clean 
 

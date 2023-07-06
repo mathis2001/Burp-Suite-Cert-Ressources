@@ -19,6 +19,7 @@ Notes and ressources from Burp Suite Academy learning
 - Turbo Intruder
 - Server-side prototype pollution scanner
 - SQLiPy sqlmap integration
+- Upload Scanner
 
 ## Useful tools
 

@@ -36,3 +36,9 @@ Almost Everything can be done only with Burp Suite but you can help with one of 
 - Cookie editor
 - FoxyProxy
 - MessPostage
+
+## other resources
+
+https://github.com/frank-leitner/portswigger-websecurity-academy/tree/main
+https://github.com/DingyShark/BurpSuiteCertifiedPractitioner
+https://github.com/botesjuan/Burp-Suite-Certified-Practitioner-Exam-Study

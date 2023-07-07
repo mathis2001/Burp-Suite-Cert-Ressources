@@ -44,3 +44,6 @@ https://github.com/frank-leitner/portswigger-websecurity-academy/tree/main
 https://github.com/DingyShark/BurpSuiteCertifiedPractitioner
 
 https://github.com/botesjuan/Burp-Suite-Certified-Practitioner-Exam-Study
+
+![image](https://github.com/mathis2001/Burp-Suite-Cert-Ressources/assets/40497633/e0e64678-d5de-46a0-967f-82deaa5562bf)
+
